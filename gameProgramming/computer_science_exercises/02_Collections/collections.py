@@ -1,4 +1,4 @@
-# Collections Examples, Jamaal Smith II v0.2a
+# Collections Examples, Jamaal Smith II v0.2b
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS DUPLICATE VALUES
 breakfastFoods = ["Bacon", "Waffles", "Pancakes", "Cereal", "Milk"]
@@ -41,9 +41,34 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 #print(classGPA)
 
 #Pause -- WYOC -- Change 5th Element
-breakfastFoods[4] = "Eggs"
-testScores[4] = "100"
-classGPA[4] = "4.0"
+#breakfastFoods[4] = "Eggs"
+#testScores[4] = "100"
+#classGPA[4] = "4.0"
+#print(breakfastFoods)
+#print(testScores)
+#print(classGPA) 
+
+# Adding and Inserting Items to a List
+# .append() adds an item to the END of a list.
+#breakfastFoods.append("hash browns")
+#print(breakfastFoods)
+#testScores.append(99)
+#print(testScores)
+#classGPA.append(1.99)
+#print(classGPA)
+
+# .insert() allows you to place an item at a specific index of the list
+breakfastFoods.insert(3, "Parfait")
 print(breakfastFoods)
+testScores.insert(3, 55)
 print(testScores)
+classGPA.insert(3, 0.0)
+print(classGPA)
+
+# PAUSE -- WYOC -- .append() another item to each list. .insert() an item at index 5 to each list.
+breakfastFoods.insert(2, "Toast")
+print(breakfastFoods)
+testScores.insert(2, 99)
+print(testScores)
+classGPA.insert(2, 4.44)
 print(classGPA)
