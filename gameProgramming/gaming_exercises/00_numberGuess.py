@@ -39,8 +39,7 @@ print("""
     """)
 
 # CPU SECRET NUMBER GENERATOR 
-secretNumber = random.randint(0, 30)
-print(secretNumber)
+
 
 # GAME LOOP
 print("You need to guess a number from 0 to 30. You have four guesses.\n")
@@ -87,7 +86,7 @@ while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
     for guesses in range(4): # START THE ROUND!
         # PUT DIFFICULTY CODE
         print(f"You have {4 - numGuesses} guesses remaining. \n")
-        playerGuess = int(input("Type a number from 0 to 30 and press ENTER. \n"))
+        playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER. \n"))
         # input() saves all data as a STRING by default.
         #int() will convert to an INTEGER
         # float() will convert to a FLOAT
