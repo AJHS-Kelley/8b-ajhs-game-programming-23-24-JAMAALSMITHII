@@ -97,9 +97,40 @@ while True:
     display(missedLetters, correctLetters, secretWord)
 
     guess = getGuessed(missedLetters + correctLetters)
-
+    
     if guess in secretWord:
         correctLetters = correctLetters + guess 
+
+        # Check To See If Winnerm Winner Chicken Dinner
+        foundAllLetters = True 
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correctLetters: 
+                foundAllLetters = False
+                break
+            if foundAllLetters:
+                print('You are incredible!!! (you got lucky...)')
+            print('The secret word was' + secretWord)
+            gameIsDone = True 
+    else:
+        missedLetters = missedLetters + guess
+
+        if len(missedLetters) == len(HANGMAN_BOARD) - 1:
+              display(missedLetters, correctLetters, secretWord)
+              print('You have run out of guesses and lost the game, LOSERRR')
+              print('You made this number f correct guesses' + str(len(correctLetters)))
+              print('The secret word was' +secretWord)
+              gameIsDone = True
+
+    if gameIsDone:
+        if playAgain():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+            secretWord = getRandomWord(words)
+        else:
+            break 
+    
+    
 
 
 
