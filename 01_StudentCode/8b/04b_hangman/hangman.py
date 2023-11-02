@@ -65,6 +65,22 @@ def display(missedLetters, correctLetters, secretWord):
     for letter in blanks: 
         print(letter, end = ' ')
     print()
+
+
+def getGuess(alreadyGuessed):
+    while True: 
+        print('Please guess a letter and press enter.')
+        guess = input()
+        guess = guess.lower()
+        if len(guess) != 1:
+            print('Please enter a single letter.')
+        elif guess in alreadyGuessed: 
+            print('Letter has been guessed alreadym try again.')
+        elif guess not on 'abcdefghijklmnopqrstuvwxyz':
+             print('Please guess a LETTER from the Englush alphabet.')
+        else:
+            return guess
+
 # i = 0
 # while i < 100:
 #      word = getRandomWord(words)
