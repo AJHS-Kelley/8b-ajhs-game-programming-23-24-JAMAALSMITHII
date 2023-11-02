@@ -3,7 +3,7 @@ import random
 words = 'run ran rock roll lean drank vamp black opium purple blurple golden destroy autumn wafflestomper '.split()
 
 # VARIABLE_NAMES in ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
-HANGMAN_BOARD = [' '' 
+HANGMAN_BOARD = [' ' '
     +---+
         |
         |
@@ -54,4 +54,18 @@ def display(missedLetters, correctLetters, secretWord):
     for eachLetter in missedLetters:
         print(eachLetter, end = ' ')
     print()
-    # FINISH THURSDAY
+    
+    blank = '_' * len(secretWord)
+
+    # Replace Blanks with Correct Letters 
+    for i in range (len(secretWord)):
+        if secretWord [i] in correctLetters: 
+            blanks = blanks[:i] + secretWord[i] + blanks[i+1:] 
+
+    for letter in blanks: 
+        print(letter, end = ' ')
+    print()
+# i = 0
+# while i < 100:
+#      word = getRandomWord(words)
+#      print(word)
