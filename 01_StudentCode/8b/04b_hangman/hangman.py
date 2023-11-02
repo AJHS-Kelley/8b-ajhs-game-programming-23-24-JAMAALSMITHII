@@ -85,6 +85,25 @@ def playAgain():
     print('Do you want to play again? Yes or No?')
     return input().lower().startswith(y)
 
+# Introduce the Game
+print('We are playing hangman')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsDone = False
+
+# Main Game Loop
+while True:
+    display(missedLetters, correctLetters, secretWord)
+
+    guess = getGuessed(missedLetters + correctLetters)
+
+    if guess in secretWord:
+        correctLetters = correctLetters + guess 
+
+
+
+
 # i = 0
 # while i < 100:
 #      word = getRandomWord(words)
