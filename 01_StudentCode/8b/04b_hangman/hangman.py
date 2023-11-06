@@ -1,9 +1,17 @@
 # Hangman Game by Jamaal Smith II, v0.0
 import random
-words = 'run ran rock roll lean drank vamp black opium purple blurple golden destroy autumn wafflestomper '.split()
+#words = 'run ran rock roll lean drank vamp black opium purple blurple golden destroy autumn rocket breakfast wafflestomper '.split()
+# DICTIONARY VERSION
+# Stored in Key:Value Pairs.
+# Actual Dictionary Word (Key) : Value (Definition)
+# Uses {} to specify a dictionary.
+words = {'Colors': 'red orange yellow green blue indigo violet fuschia teal garnet silver gold brown white blurple'.split(),
+        'Animals': 'cat dog cow pig chicken mouse lion cheetah tiger snake duck goose alligator fish wombat shark bear'.split(),
+        'Shapes': 'square circle triangle rhombus trapezoid diamond dodecahedron parallelogram'.split(),
+        'foods': 'hamburger hotdog peanut cookies sandwich potato lettuce spinnach noodles waffle pancake fries onion chips oyster clams steak bread'.split(),}
 
 # VARIABLE_NAMES in ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
-HANGMAN_BOARD = [' ' '
+HANGMAN_BOARD = ['''
     +---+
         |
         |
@@ -38,7 +46,7 @@ HANGMAN_BOARD = [' ' '
     o   |
    /|\  |
    / \  |
-    ======== ''', ''']
+    ========  ''']
 
 # Pick Word from List
 def getRandomWord(wordList): # Return a random word from the list.
@@ -65,6 +73,7 @@ def display(missedLetters, correctLetters, secretWord):
     for letter in blanks: 
         print(letter, end = ' ')
     print()
+
 
 
 def getGuess(alreadyGuessed):
@@ -107,10 +116,10 @@ while True:
             if secretWord[i] not in correctLetters: 
                 foundAllLetters = False
                 break
-            if foundAllLetters:
-                print('You are incredible!!! (you got lucky...)')
-            print('The secret word was' + secretWord)
-            gameIsDone = True 
+        if foundAllLetters:
+        print('You are incredible!!! (you got lucky...)')
+        print('The secret word was' + secretWord)
+        gameIsDone = True 
     else:
         missedLetters = missedLetters + guess
 
@@ -131,6 +140,7 @@ while True:
             break 
     
     
+
 
 
 
