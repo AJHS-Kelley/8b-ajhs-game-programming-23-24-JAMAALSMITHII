@@ -61,15 +61,15 @@ HANGMAN_BOARD = ['''
     ========''',]
 
 # Pick Word from List
-def getRandomWord(wordList): # Return a random word from the list.
-    wordIndex = random.randint(0, len(wordlist) - 1)
-    # len(listNmae) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS
-    return wordList[wordIndex]
+# def getRandomWord(wordList): # Return a random word from the list.
+#     wordIndex = random.randint(0, len(wordlist) - 1)
+#     # len(listNmae) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS
+#     return wordList[wordIndex]
 
 # Pick Word from Dictionary
 def getRandomWord(wordDict): # Return a random word from the list.
     wordKey = random.choice(list(wordDict.keys()))
-    wordIndex = random.randite(0, len(wordDict[wordKey] - 1))
+    wordIndex = random.randint(0, len(wordDict[wordKey] - 1))
     return [wordDict[wordKey][wordIndex], wordKey]
 
 def display(missedLetters, correctLetters, secretWord):
@@ -103,14 +103,14 @@ def getGuess(alreadyGuessed):
             print('Please enter a single letter.')
         elif guess in alreadyGuessed: 
             print('Letter has been guessed alreadym try again.')
-        elif guess not on 'abcdefghijklmnopqrstuvwxyz':
-             print('Please guess a LETTER from the Englush alphabet.')
+        elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+             print('Please guess a LETTER from the English alphabet.')
         else:
             return guess
         
 def playAgain():
     print('Do you want to play again? Yes or No?')
-    return input().lower().startswith(y)
+    return input().lower().startswith('y')
 
 # Introduce the Game
 print('We are playing hangman')
@@ -118,7 +118,7 @@ print('We are playing hangman')
 # CHOOSE DIFFICULTY
 difficulty = 'X'
 while difficulty not in 'EMH':
-    print('Please Xhoose Easy, Medium or Hard. Type the first letter then press enter \n')
+    print('Please choose Easy, Medium or Hard. Type the first letter then press enter \n')
     difficulty = input().upper()
 if difficulty =='M': # MEDIUM
     del HANGMAN_BOARD[8]
@@ -129,17 +129,17 @@ if difficulty =='M': # HARD
     del HANGMAN_BOARD[5]
     del HANGMAN_BOARD[3]
 
-
 missedLetters = ''
 correctLetters = ''
-secretWord = getRandomWord(words)
+secretWord, secretSet = getRandomWord(words) 
 gameIsDone = False
 
 # Main Game Loop
 while True:
+    print('The secret wword is from the ' + secretSet + ' category. \n')
     display(missedLetters, correctLetters, secretWord)
 
-    guess = getGuessed(missedLetters + correctLetters)
+    guess = getGuess(missedLetters + correctLetters)
     
     if guess in secretWord:
         correctLetters = correctLetters + guess 
@@ -150,10 +150,10 @@ while True:
             if secretWord[i] not in correctLetters: 
                 foundAllLetters = False
                 break
-        if foundAllLetters:
-        print('You are incredible!!! (you got lucky...)')
-        print('The secret word was' + secretWord)
-        gameIsDone = True 
+        if foundAllLetters: #if True:
+            print('You are incredible!')
+            print('The secret word was' + secretWord)
+            gameIsDone = True 
     else:
         missedLetters = missedLetters + guess
 
