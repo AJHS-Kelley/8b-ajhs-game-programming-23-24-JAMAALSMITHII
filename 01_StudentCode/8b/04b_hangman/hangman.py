@@ -5,6 +5,7 @@ import random
 # Stored in Key:Value Pairs.
 # Actual Dictionary Word (Key) : Value (Definition)
 # Uses {} to specify a dictionary.
+
 words = {'Colors': 'red orange yellow green blue indigo violet fuschia teal garnet silver gold brown white blurple'.split(),
         'Animals': 'cat dog cow pig chicken mouse lion cheetah tiger snake duck goose alligator fish wombat shark bear'.split(),
         'Shapes': 'square circle triangle rhombus trapezoid diamond dodecahedron parallelogram'.split(),
@@ -46,13 +47,30 @@ HANGMAN_BOARD = ['''
     o   |
    /|\  |
    / \  |
-    ========  ''']
+    ========''', '''
+    +---+
+    o   |
+  o-|-o |
+   / \  |
+    ========''','''
+    +---+
+    o   |
+  o-|-o |
+   / \  |
+  o  o  |
+    ========''',]
 
 # Pick Word from List
 def getRandomWord(wordList): # Return a random word from the list.
     wordIndex = random.randint(0, len(wordlist) - 1)
     # len(listNmae) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS
     return wordList[wordIndex]
+
+# Pick Word from Dictionary
+def getRandomWord(wordDict): # Return a random word from the list.
+    wordKey = random.choice(list(wordDict.keys()))
+    wordIndex = random.randite(0, len(wordDict[wordKey] - 1))
+    return [wordDict[wordKey][wordIndex], wordKey]
 
 def display(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
@@ -96,6 +114,22 @@ def playAgain():
 
 # Introduce the Game
 print('We are playing hangman')
+
+# CHOOSE DIFFICULTY
+difficulty = 'X'
+while difficulty not in 'EMH':
+    print('Please Xhoose Easy, Medium or Hard. Type the first letter then press enter \n')
+    difficulty = input().upper()
+if difficulty =='M': # MEDIUM
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+if difficulty =='M': # HARD
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[5]
+    del HANGMAN_BOARD[3]
+
+
 missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(words)
