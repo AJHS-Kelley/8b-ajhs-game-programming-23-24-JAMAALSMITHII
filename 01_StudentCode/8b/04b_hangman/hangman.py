@@ -64,12 +64,12 @@ HANGMAN_BOARD = ['''
 # def getRandomWord(wordList): # Return a random word from the list.
 #     wordIndex = random.randint(0, len(wordlist) - 1)
 #     # len(listNmae) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS
-#     return wordList[wordIndex]
+
 
 # Pick Word from Dictionary
 def getRandomWord(wordDict): # Return a random word from the list.
     wordKey = random.choice(list(wordDict.keys()))
-    wordIndex = random.randint(0, len(wordDict[wordKey] - 1))
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
     return [wordDict[wordKey][wordIndex], wordKey]
 
 def display(missedLetters, correctLetters, secretWord):
@@ -83,15 +83,15 @@ def display(missedLetters, correctLetters, secretWord):
     
     blank = '_' * len(secretWord)
 
+    
     # Replace Blanks with Correct Letters 
     for i in range (len(secretWord)):
-        if secretWord [i] in correctLetters: 
+        if secretWord[i] in correctLetters:
             blanks = blanks[:i] + secretWord[i] + blanks[i+1:] 
 
     for letter in blanks: 
         print(letter, end = ' ')
     print()
-
 
 
 def getGuess(alreadyGuessed):
@@ -123,7 +123,7 @@ while difficulty not in 'EMH':
 if difficulty =='M': # MEDIUM
     del HANGMAN_BOARD[8]
     del HANGMAN_BOARD[7]
-if difficulty =='M': # HARD
+if difficulty =='H': # HARD
     del HANGMAN_BOARD[8]
     del HANGMAN_BOARD[7]
     del HANGMAN_BOARD[5]
@@ -137,14 +137,14 @@ gameIsDone = False
 # Main Game Loop
 while True:
     print('The secret wword is from the ' + secretSet + ' category. \n')
-    display(missedLetters, correctLetters, secretWord)
+    displayBoard(missedLetters, correctLetters, secretWord)
 
     guess = getGuess(missedLetters + correctLetters)
     
     if guess in secretWord:
         correctLetters = correctLetters + guess 
 
-        # Check To See If Winnerm Winner Chicken Dinner
+        # Check To See If Winner Winner Chicken Dinner
         foundAllLetters = True 
         for i in range(len(secretWord)):
             if secretWord[i] not in correctLetters: 
