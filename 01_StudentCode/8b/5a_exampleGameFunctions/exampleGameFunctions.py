@@ -14,4 +14,7 @@ def functionFour(param1, param2, param3):
     pass
 
 def shootBall(shotContested, shotRelease)
-    if shotContested = yes and shotRelease = perfect
+    if shotContested = yes and shotRelease <= 75 
+    shotMade = True
+    elif shotContested = no and shotRelease > 75
+    shotMade = False
