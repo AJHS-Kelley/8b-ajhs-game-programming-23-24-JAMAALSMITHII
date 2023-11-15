@@ -13,9 +13,19 @@ def functionThree(param1 = "Default Value"):
 def functionFour(param1, param2, param3): 
     pass
 
-def shootBall(shotContested, shotRelease)
-    if shotContested = yes and shotRelease <= 75
-    shotMade = True
-    elif shotContested = no and shotRelease > 65
-    shotMade = False
+def shootBall(shotContested, shotRelease):
+    if shotContested > 3.0 and shotRelease <= 75:
+        shotMade = True
+    elif shotContested > 2.0 and shotRelease > 65:
+        shotMade = False
+    else:
+        print('Your shot has been blocked! Turnover! /n')
+        shotBlocked = True
+        return shotBlocked
+    return shotMade
+
+def stealball(speed, strength):
+    if speed <= 80 and strength <= 3.0:
+    
+
     
