@@ -39,8 +39,17 @@ def stealBall(speed, strength):
         return foulBall
     return ballStole
 
-def dunkBall(vertical, )
-        
+def dunkBall(vertical, strength):
+    if vertical <= 75 and strength <= 4.0:
+        ballDunked = True
+    elif vertical > 70 and strength > 2.0:
+        ballDunked = False
+    else:
+        print('And he missed the dunk!! /n')
+        missedDunk = True
+        return missedDunk
+    return ballDunked
+
     
 
     
