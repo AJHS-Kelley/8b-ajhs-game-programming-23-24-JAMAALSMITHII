@@ -1,17 +1,6 @@
 # Example Game Functions Project, Ryan Kelley, v0,4
 import random
 
-def functionOne():
-    pass
-
-def functionTwo(param1):
-    pass
-
-def functionThree(param1 = "Default Value"):
-    pass
-
-def functionFour(param1, param2, param3): 
-    pass
 
 # shotContested is the defender contesting your shot. Depending on their defensive level they could either make your shot harder to make or make no difference at all.
 # Having a good shotRelease will help you make more of your shots the higher your shotRelease is the more likely you are of making the shot. A 100 shotRelease will score no matter the level of the defenders contest.
