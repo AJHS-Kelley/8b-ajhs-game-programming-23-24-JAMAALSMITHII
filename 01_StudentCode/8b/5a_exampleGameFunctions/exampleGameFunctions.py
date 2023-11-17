@@ -1,4 +1,4 @@
-# Example Game Functions Project, Ryan Kelley, v0,1
+# Example Game Functions Project, Ryan Kelley, v0,4
 import random
 
 def functionOne():
@@ -39,6 +39,7 @@ def stealBall(speed, strength):
         return foulBall
     return ballStole
 
+def dunkBall(vertical, )
         
     
 
