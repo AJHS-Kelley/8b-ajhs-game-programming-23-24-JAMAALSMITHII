@@ -44,8 +44,12 @@ def jumpBall(vertical):
         ballWon = True
     elif vertical > 80:
         ballWon = False
+    else:
+        print('Ball lost! Get on defense! /n')
+        ballLost = True
+        return ballLost
+    return ballWon
 
-        
 
 
     
