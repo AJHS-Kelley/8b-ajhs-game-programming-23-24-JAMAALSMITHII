@@ -39,6 +39,13 @@ def dunkBall(vertical, strength):
         return missedDunk
     return ballDunked
 
-    
+def jumpBall(vertical):
+    if vertical <= 80:
+        ballWon = True
+    elif vertical > 80:
+        ballWon = False
+
+        
+
 
     
