@@ -1,4 +1,4 @@
-#Object-Oriented Programing, Jamaal Smith, v0.1
+#Object-Oriented Programing, Jamaal Smith, v0.2
 
 class Person: # Use PascalCase for ClassNames
     def __init__(self,name, age, weight):
@@ -10,7 +10,9 @@ class Person: # Use PascalCase for ClassNames
     def __str__(self):   
         return f"Name: {self.name}\nThis person is {self.age} years old. \nThey weigh {self.weight} pounds. \n"
 
-
+    def classFunction():
+        print("This is an example class function. \n")
+        print("It only works when called on an object of that class.")
 
 person1 = Person("Monkey D. Luffy", 19, 230)
 person2 = Person("KANKAN", 23, 210)
@@ -23,3 +25,5 @@ elif person1.weight == person2.weight:
     print("Each person weighs the same. \n")
 else:
     print(f"{person2.name} weighs more than {person1.name}.")
+
+person1.classFunction()
