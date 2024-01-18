@@ -92,6 +92,18 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime : float) -> None:
 
     fileName = "dnaReplicationScore" + fullName + ".txt"
 
+    saveData = open(fileName, "a")
+    # File Modes
+    # "x" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
+    # "w" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT
+    # "a" mode -- CREATE FILE, IF FILE EXISTS, APPEND TO IT
+    saveData.write(f"DNA Sequence: {dnaSequence}\nRNA Sequence: {rnaSequence}\n")
+    saveData.write(f"Transcription Time: {rnaTime}\n")
+    saveData.write(f"Score: {score}\n")
+    saveData.write(f"{fullName}\n")
+    saveData.write(f"{datetime.datetime.now()}\n")
+    saveData.close()
+
 dna = genDNA()
 rna = DoTranscription(dna)
 print(verifySequence(dna, rna[0]))
