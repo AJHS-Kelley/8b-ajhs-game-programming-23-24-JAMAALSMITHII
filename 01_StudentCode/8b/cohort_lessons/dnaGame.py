@@ -68,7 +68,7 @@ def calcScore(rnaSequece: str, rnaTime: float) -> int:
         score += 25000
     return score 
 
-scoreMulti = 0.0
+    scoreMulti = 0.0
     if len(rnaSequence) >= 30: # Longest Sequence, Highest Multiplier
         scoreMulti = 5.0
     elif len(rnaSequence) >= 25: # Longest Sequence, Highest Multiplier
@@ -85,6 +85,7 @@ scoreMulti = 0.0
     # Decrease scpre, multiplier should be < 1.0
     score *= scoreMulti
     return score 
+
 def saveScore(dnaSequence: str, rnaSequence: str, rnaTime : float) -> None:
     playerName = input("What is your first name? \n")
     lastName = input("What is your last name ? \n")
@@ -106,7 +107,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime : float) -> None:
 
 dna = genDNA()
 rna = DoTranscription(dna)
-print(verifySequence(dna, rna[0]))
-
+if (verifySequence(dna, rna[0]))
+    print()
 print(calcScore(rna[0], rna[1]))
     
