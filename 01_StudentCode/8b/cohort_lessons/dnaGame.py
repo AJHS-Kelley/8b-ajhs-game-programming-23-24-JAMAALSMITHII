@@ -54,7 +54,7 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
             print("Unable to identify correct base so no match. \n")
     return isMatch
 
-def calcScore(rnaSequece: str, rnaTime: float) -> int:
+def calcScore(rnaSequence: str, rnaTime: float) -> int:
     score = 0
     if rnaTime < 1.0: # Fastest Time, Highest Score
         score += 1000000
@@ -66,7 +66,7 @@ def calcScore(rnaSequece: str, rnaTime: float) -> int:
         score += 500000
     else: # Slowest Time, Lowest Score
         score += 25000
-    return score 
+    
 
     scoreMulti = 0.0
     if len(rnaSequence) >= 30: # Longest Sequence, Highest Multiplier
@@ -107,7 +107,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime : float) -> None:
 
 dna = genDNA()
 rna = DoTranscription(dna)
-if (verifySequence(dna, rna[0]))
+if (verifySequence(dna, rna[0])):
     print()
 print(calcScore(rna[0], rna[1]))
     
