@@ -108,6 +108,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime : float) -> None:
 dna = genDNA()
 rna = DoTranscription(dna)
 if (verifySequence(dna, rna[0])):
-    print()
-print(calcScore(rna[0], rna[1]))
+    score = (calcScore(rna[0], rna[1]))
+    saveScore(dna, rna[0], rna[1], score)
+
     
