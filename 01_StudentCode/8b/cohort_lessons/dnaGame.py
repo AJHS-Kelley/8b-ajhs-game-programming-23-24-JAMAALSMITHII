@@ -111,4 +111,7 @@ if (verifySequence(dna, rna[0])):
     score = (calcScore(rna[0], rna[1]))
     saveScore(dna, rna[0], rna[1], score)
 
-    
+# You have a fatal crash in your file save code on Line 112.
+# You are giving it four arguments but it only requires three. 
+
+
