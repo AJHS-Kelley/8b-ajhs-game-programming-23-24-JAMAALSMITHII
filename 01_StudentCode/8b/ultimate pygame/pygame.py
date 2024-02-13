@@ -27,9 +27,12 @@ while True:
         # if event.type == pygame.MOUSEMOTION:
         #   if player_rect.collidepoin(event.pos): print('collision')
 
-     screen.blit(sky_surface, (0,0))
-     screen.blit(ground_surface,(0,300))
-     screen.blit(score_surf,(300,50))
+    screen.blit(sky_surface, (0,0))
+    screen.blit(ground_surface,(0,300))
+    pygame.draw.rect(screen,'Pink',score_rect)
+    pygame.draw.rect(screen,'Pink',score_rect,10)
+    pygame.draw.line(screen,'Gold',(0,0),(800,400),10
+    screen.blit(score_surf,score_rect)
             
     snail_rect.x -= 4
     if snail_rect.right <= 0: snail_rect.left = 800
