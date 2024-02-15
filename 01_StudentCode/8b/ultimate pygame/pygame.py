@@ -1,6 +1,9 @@
 import pygame 
 from sys import exit
 
+# Almost finished, but you have a critical crash as soon as the code is executed.  Y
+# You must fix these errors before the final submission is due!
+
 pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption("Runner")
