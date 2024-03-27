@@ -10,10 +10,20 @@ Levels / Maps:
     -- Galleria Mall
     -- Outside of Toyota Center stadium 
 
-Objectives / Obstacles / Enemies:
-    -- Other players
-    --
+Objectives / Enemies:
+    -- Other players (Enemies)
+    -- -
 
     Items /Equipment:
     --
     --
+
+Difficulty Changes:
+    -- Casual play
+    -- Skilled base matchmaking ranked play
+
+Controls:
+    KBM 
+     -- Movement: WASD
+     -- Camera: Mouse
+     --
