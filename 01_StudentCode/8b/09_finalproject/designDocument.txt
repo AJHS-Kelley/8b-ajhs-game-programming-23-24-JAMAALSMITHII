@@ -6,9 +6,11 @@ Loss Condition(s): All party members are killed
 
 Levels / Maps: 
     -- Bikini Bottom
+    -- Outside of Finn's house in the Land of Ooo
     -- New York City Times Square
     -- Galleria Mall
     -- Outside of Toyota Center stadium 
+    -- Libary 
 
 Objectives / Enemies:
     -- Other players (Enemies)
@@ -26,4 +28,4 @@ Controls:
     KBM 
      -- Movement: WASD
      -- Camera: Mouse
-     --
+     -- 
