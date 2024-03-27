@@ -1,0 +1,19 @@
+Game Genre / Type: Battle Royale
+Theme: Cartooney, Vibrant graphics 
+
+Win Condition: Be the last team standing
+Loss Condition(s): All party members are killed
+
+Levels / Maps: 
+    -- Bikini Bottom
+    -- New York City Times Square
+    -- Galleria Mall
+    -- Outside of Toyota Center stadium 
+
+Objectives / Obstacles / Enemies:
+    -- Other players
+    --
+
+    Items /Equipment:
+    --
+    --
