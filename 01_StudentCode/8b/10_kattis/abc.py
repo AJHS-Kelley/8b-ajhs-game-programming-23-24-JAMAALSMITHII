@@ -28,4 +28,6 @@ order = input()
 myString = ""
 
 for i in range (len(order)):
-    
+    if order[i] == "A":
+
+    myString += str(a)
