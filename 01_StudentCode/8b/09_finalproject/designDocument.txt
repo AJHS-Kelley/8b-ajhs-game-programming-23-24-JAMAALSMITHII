@@ -28,4 +28,6 @@ Controls:
     KBM 
      -- Movement: WASD
      -- Camera: Mouse
+     -- Jump: Space bar
+     -- Crouch: CTRL  
      -- 
