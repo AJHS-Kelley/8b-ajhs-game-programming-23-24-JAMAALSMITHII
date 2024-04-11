@@ -14,7 +14,7 @@ Levels / Maps:
 
 Objectives / Enemies:
     -- Other players (Enemies)
-    -- -
+    -- 
 
     Items /Equipment:
     --
@@ -30,4 +30,5 @@ Controls:
      -- Camera: Mouse
      -- Jump: Space bar
      -- Crouch: CTRL  
-     -- 
+     -- M1:fire
+     -- M2: aim
