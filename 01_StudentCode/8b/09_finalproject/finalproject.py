@@ -24,7 +24,6 @@ screen = pygame.display.set_mode((x, y))
 
 
 
-import pygame 
 from sys import exit
 
 # Almost finished, but you have a critical crash as soon as the code is executed.  Y
