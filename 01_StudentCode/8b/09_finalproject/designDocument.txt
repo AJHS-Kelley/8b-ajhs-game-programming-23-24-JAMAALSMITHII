@@ -1,20 +1,14 @@
-Game Genre / Type: Battle Royale
-Theme: Cartooney, Vibrant graphics 
+Game Genre / Type:  strategy game
+Theme: Cartooney
 
-Win Condition: Be the last team standing
-Loss Condition(s): All party members are killed
+Win Condition: Eat all the apples / survive
+Loss Condition(s): Touching the outer walls or yourself
 
 Levels / Maps: 
-    -- Bikini Bottom
-    -- Outside of Finn's house in the Land of Ooo
-    -- New York City Times Square
-    -- Galleria Mall
-    -- Outside of Toyota Center stadium 
-    -- Libary 
+    -- Starter map
 
 Objectives / Enemies:
-    -- Other players (Enemies)
-    -- 
+    -- Eat all the apples
 
     Items /Equipment:
     --
@@ -22,13 +16,7 @@ Objectives / Enemies:
 
 Difficulty Changes:
     -- Casual play
-    -- Skilled base matchmaking ranked play
 
 Controls:
     KBM 
      -- Movement: WASD
-     -- Camera: Mouse
-     -- Jump: Space bar
-     -- Crouch: CTRL  
-     -- M1:fire
-     -- M2: aim
