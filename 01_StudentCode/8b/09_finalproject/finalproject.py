@@ -20,34 +20,7 @@ if Difficulty == 1:
 else:
     pygame.display.set_caption("FlxRR -- Ranked")
 
-screen = pygame.display.set_mode((x, y))
-
-
-# def startgame():
-#    content 
-#    def button(x,y,w,h):
-#     pos = pygame.mouse.get_pos()
-#     click = pygame.mouse.get_pressed()
-
-#     if pos[0] > x and pos[0] < x + w and pos[1] > y and pos[1] < y + h:
-#        if click[0] == 1:
-#          startgame()
-#     pygame.draw.rect(screen, color, (x,y,w,h))
-
-# def menu():
-
-#         while True:
-
-#         surface.blit(background, (0, 0))
-
-
-#         button(x,y,w,h)
-
-#         for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             pygame.quit()
-#             sys.exit()
-#         pygame.display.update()
+screen = pygame.display.set_mode((1920, 1080))
 
 # Main Loop -- Start Here
 while True: # Each iteration through this loop is ONE FRAME of your game. 
@@ -58,9 +31,31 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
 
     # The code from here down should happen EVERY FRAME. 
 
+    velocity = 3
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
     
     # Controls -- How to Move the Player? 
+    keys = pygame.key.get_pressed()  # This will give us a dictonary where each key has a value of 1 or 0. Where 1 is pressed and 0 is not pressed.
 
+    if keys[pygame.K_LEFT]: 
+        player = x,y = velocity
+
+        if keys[pygame.K_RIGHT]: 
+            player = x,y = velocity
+
+            if keys[pygame.K_UP]:
+                player = x,y = velocity
+
+                if keys[pygame.K_DOWN]:
+                     player = x,y = velocity
+
+    pygame.draw.rect(win, (255,0,0), (x, y, width, height))   
+    pygame.display.update() 
+    
+    pygame.quit()
 
     # Attacking Enemies -- Determine Direction / Range / Hit % 
     
@@ -77,3 +72,24 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
     # ALWAYS LAST
     pygame.display.update()
     clock.tick(60)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
