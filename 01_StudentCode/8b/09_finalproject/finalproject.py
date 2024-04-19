@@ -71,7 +71,9 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
     # Display the Graphics
     # Use .blit() primarily 
 
+    # DEBUGGING MESSAGES 
+    print(f"Mouse: {pygame.mouse.get_pos()}\n")
 
     # ALWAYS LAST
     pygame.display.update()
-    clock.tick(30)
+    clock.tick(60)
