@@ -23,4 +23,26 @@ screen = pygame.display.set_mode((x, y))
 screen = pygame.display.set_mode((x, y))
 
 def startgame():
-   content..... 
+   content 
+   def button(x,y,w,h):
+    pos = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+
+    if pos[0] > x and pos[0] < x + w and pos[1] > y and pos[1] < y + h:
+       if click[0] == 1:
+         startgame()
+    pygame.draw.rect(screen, color, (x,y,w,h))
+    def menu():
+
+        while True:
+
+        surface.blit(background, (0, 0))
+
+
+        button(x,y,w,h)
+
+        for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        pygame.display.update()
