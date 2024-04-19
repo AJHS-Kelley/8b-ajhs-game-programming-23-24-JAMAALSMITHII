@@ -40,3 +40,17 @@ color_light = (170,170,170)
 # dark shade of the button  
 color_dark = (100,100,100)  
 
+# stores the width of the  
+# screen into a variable  
+width = screen.get_width()  
+  
+# stores the height of the  
+# screen into a variable  
+height = screen.get_height()  
+  
+# defining a font  
+smallfont = pygame.font.SysFont('Corbel',35)  
+
+# rendering a text written in  
+# this font  
+text = smallfont.render('quit' , True , color)  
