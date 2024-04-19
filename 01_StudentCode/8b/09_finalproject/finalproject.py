@@ -22,4 +22,3 @@ else:
 screen = pygame.display.set_mode((x, y))
 screen = pygame.display.set_mode((x, y))
 
-
