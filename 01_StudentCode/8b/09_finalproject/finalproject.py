@@ -11,6 +11,7 @@ else:
         y = 1080
 
 pygame.init()
+clock = pygame.time.Clock() 
 
 Difficulty = int(input("Hello. Welcome. PLease select the game mode you would like to play. 1 for CASUAL PLAY or 2 for RANKED. \n"))
 
@@ -20,29 +21,57 @@ else:
     pygame.display.set_caption("FlxRR -- Ranked")
 
 screen = pygame.display.set_mode((x, y))
-screen = pygame.display.set_mode((x, y))
-
-def startgame():
-   content 
-   def button(x,y,w,h):
-    pos = pygame.mouse.get_pos()
-    click = pygame.mouse.get_pressed()
-
-    if pos[0] > x and pos[0] < x + w and pos[1] > y and pos[1] < y + h:
-       if click[0] == 1:
-         startgame()
-    pygame.draw.rect(screen, color, (x,y,w,h))
-    def menu():
-
-        while True:
-
-        surface.blit(background, (0, 0))
 
 
-        button(x,y,w,h)
+# def startgame():
+#    content 
+#    def button(x,y,w,h):
+#     pos = pygame.mouse.get_pos()
+#     click = pygame.mouse.get_pressed()
 
-        for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        pygame.display.update()
+#     if pos[0] > x and pos[0] < x + w and pos[1] > y and pos[1] < y + h:
+#        if click[0] == 1:
+#          startgame()
+#     pygame.draw.rect(screen, color, (x,y,w,h))
+
+# def menu():
+
+#         while True:
+
+#         surface.blit(background, (0, 0))
+
+
+#         button(x,y,w,h)
+
+#         for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             pygame.quit()
+#             sys.exit()
+#         pygame.display.update()
+
+# Main Loop -- Start Here
+while True: # Each iteration through this loop is ONE FRAME of your game. 
+     
+    # This loop works best for 'menu' and 'option' type events. 
+    for event in pygame.event.get(): # Check to see if there are events.
+        pass
+
+    # The code from here down should happen EVERY FRAME. 
+
+    
+    # Controls -- How to Move the Player? 
+
+
+    # Attacking Enemies -- Determine Direction / Range / Hit % 
+    
+
+    # Picking Up / Using Items 
+
+
+    # Display the Graphics
+    # Use .blit() primarily 
+
+
+    # ALWAYS LAST
+    pygame.display.update()
+    clock.tick(30)
