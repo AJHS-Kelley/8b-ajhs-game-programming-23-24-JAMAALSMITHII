@@ -52,7 +52,7 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
                 if keys[pygame.K_DOWN]:
                      player = x,y = velocity
 
-    pygame.draw.rect(win, (255,0,0), (x, y, width, height))   
+    pygame.draw.rect(win, (255,0,0), (x, y, 1980, 1020))   
     pygame.display.update() 
     
     pygame.quit()
@@ -72,11 +72,6 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
     # ALWAYS LAST
     pygame.display.update()
     clock.tick(60)
-
-
-
-
-
 
 
 
