@@ -40,51 +40,87 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
     # Controls -- How to Move the Player? 
     keys = pygame.key.get_pressed()  # This will give us a dictonary where each key has a value of 1 or 0. Where 1 is pressed and 0 is not pressed.
 
-    if keys[pygame.K_LEFT]: 
-        player = x,y = velocity
+# Importing pygame module 
 
-        if keys[pygame.K_RIGHT]: 
-            player = x,y = velocity
+    from pygame.locals import *
 
-            if keys[pygame.K_UP]:
-                player = x,y = velocity
+# initiate pygame and give permission 
+# to use pygame's functionality. 
+    pygame.init() 
 
-                if keys[pygame.K_DOWN]:
-                     player = x,y = velocity
+# create the display surface object 
+# of specific dimension. 
+    window = pygame.display.set_mode((600, 600)) 
 
-    pygame.draw.rect(win, (255,0,0), (x, y, 1980, 1020))   
-    pygame.display.update() 
-    
-    pygame.quit()
+# Add caption in the window 
+    pygame.display.set_caption('Player Movement') 
 
-    # Attacking Enemies -- Determine Direction / Range / Hit % 
-    
-
-    # Picking Up / Using Items 
+# Add player sprite 
+    image = pygame.image.load(r'Player_image.png') 
 
 
-    # Display the Graphics
-    # Use .blit() primarily 
+# Store the initial 
+# coordinates of the player in 
+# two variables i.e. x and y. 
+    x = 100
+    y = 100
 
-    # DEBUGGING MESSAGES 
-    print(f"Mouse: {pygame.mouse.get_pos()}\n")
+# Create a variable to store the 
+# velocity of player's movement 
+    velocity = 12
 
-    # ALWAYS LAST
-    pygame.display.update()
-    clock.tick(60)
+# Creating an Infinite loop 
+    run = True
+    while run: 
 
+	# Filling the background with 
+	# white color 
+	    window.fill((255, 255, 255)) 
 
+	# Display the player sprite at x 
+	# and y coordinates 
+    window.blit(image, (x, y)) 
 
+	# iterate over the list of Event objects 
+	# that was returned by pygame.event.get() 
+	# method. 
+for event in pygame.event.get(): 
 
+		# Closing the window and program if the 
+		# type of the event is QUIT 
+		if event.type == pygame.QUIT: 
+			run = False
+			pygame.quit() 
+			quit() 
 
+		# Checking event key if the type 
+		# of the event is KEYDOWN i.e. 
+		# keyboard button is pressed 
+		if event.type == pygame.KEYDOWN: 
 
+			# Decreasing the x coordinate 
+			# if the button pressed is 
+			# Left arrow key 
+			if event.key == pygame.K_LEFT: 
+				x -= velocity 
 
+			# Increasing the x coordinate 
+			# if the button pressed is 
+			# Right arrow key 
+			if event.key == pygame.K_RIGHT: 
+				x += velocity 
 
+			# Decreasing the y coordinate 
+			# if the button pressed is 
+			# Up arrow key 
+			if event.key == pygame.K_UP: 
+				y -= velocity 
 
+			# Increasing the y coordinate 
+			# if the button pressed is 
+			# Down arrow key 
+			if event.key == pygame.K_DOWN: 
+				y += velocity 
 
-
-
-
-
-
-
+		# Draws the surface object to the screen. 
+		pygame.display.update() 
