@@ -1,6 +1,11 @@
 # final Project, Jamaal Smith, v0.0
 import sys, random, pygame
 
+
+# Debugging Logs
+logFile = "geometryBlasterDebugLog.txt"
+logData = open(logFile, "w")
+
 resolution = 0 # 0 = Low resolution (800 x 600), 1 = High Resolution (1920 x 1080)
 
 if resolution == 0:
