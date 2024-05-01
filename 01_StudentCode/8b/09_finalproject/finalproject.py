@@ -100,7 +100,7 @@ for event in pygame.event.get():
 
 		# Checking event key if the type 
 		# of the event is KEYDOWN i.e. 
-		# keyboard button is pressed 
+		# keyboard button is pressed +
 		if event.type == pygame.KEYDOWN: 
 
 			# Decreasing the x coordinate 
