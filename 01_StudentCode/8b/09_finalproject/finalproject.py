@@ -84,48 +84,62 @@ while True: # Each iteration through this loop is ONE FRAME of your game.
 
 	# Display the player sprite at x 
 	# and y coordinates 
-    window.blit(image, (x, y)) 
+window.blit(image, (x, y)) 
 
 	# iterate over the list of Event objects 
 	# that was returned by pygame.event.get() 
 	# method. 
 for event in pygame.event.get(): 
+	Setup
 
-		# Closing the window and program if the 
-		# type of the event is QUIT 
-		if event.type == pygame.QUIT: 
-			run = False
-			pygame.quit() 
-			quit() 
+backdrop = pygame.image.load(os.path.join('images', 'stage.png'))
+clock = pygame.time.Clock()
+pygame.init()
+backdropbox = world.get_rect()
+main = True
 
-		# Checking event key if the type 
-		# of the event is KEYDOWN i.e. 
-		# keyboard button is pressed +
-		if event.type == pygame.KEYDOWN: 
+player = Player()  # spawn player
+player.rect.x = 0  # go to x
+player.rect.y = 0  # go to y
+player_list = pygame.sprite.Group()
+player_list.add(player)
+steps = 10
 
-			# Decreasing the x coordinate 
-			# if the button pressed is 
-			# Left arrow key 
-			if event.key == pygame.K_LEFT: 
-				x -= velocity 
 
-			# Increasing the x coordinate 
-			# if the button pressed is 
-			# Right arrow key 
-			if event.key == pygame.K_RIGHT: 
-				x += velocity 
+Main; Loop
+ 
 
-			# Decreasing the y coordinate 
-			# if the button pressed is 
-			# Up arrow key 
-			if event.key == pygame.K_UP: 
-				y -= velocity 
+while main:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            try:
+                sys.exit()
+            finally:
+                main = False
 
-			# Increasing the y coordinate 
-			# if the button pressed is 
-			# Down arrow key 
-			if event.key == pygame.K_DOWN: 
-				y += velocity 
+        if event.type == pygame.KEYDOWN:
+            if event.key == ord('q'):
+                pygame.quit()
+                try:
+                    sys.exit()
+                finally:
+                    main = False
+            if event.key == pygame.K_LEFT or event.key == ord('a'):
+                player.control(-steps, 0)
+            if event.key == pygame.K_RIGHT or event.key == ord('d'):
+                player.control(steps, 0)
+            if event.key == pygame.K_UP or event.key == ord('w'):
+                print('jump')
 
-		# Draws the surface object to the screen. 
-		pygame.display.update() 
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == ord('a'):
+                player.control(steps, 0)
+            if event.key == pygame.K_RIGHT or event.key == ord('d'):
+                player.control(-steps, 0)
+
+    world.blit(backdrop, backdropbox)
+    player.update()
+    player_list.draw(world)
+    pygame.display.flip()
+    clock.tick(fps)
